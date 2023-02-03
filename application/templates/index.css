@@ -1,0 +1,57 @@
+
+
+body {
+
+    background-color: rgba(107, 163, 212, 0.651);
+}
+
+.wall input {
+    margin-top: 1cm;
+    margin-right: 20%;
+    margin-bottom: 1cm;
+    height: 10mm;
+}
+
+.brick input {
+    margin-right: 20%;
+    margin-bottom: 1cm;
+    height: 10mm;
+}
+
+.buttons {
+    margin-left: 45%;
+}
+
+.navdiv {
+    display: inline;
+    width: 25%;
+    position:sticky;
+    float: left;
+    margin-top: 0.9%;
+    margin-left: 0%;
+}
+.navdiv a{
+    margin: auto;
+    text-decoration: none;
+    font-size: medium;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(110, 220, 20);
+}
+
+.navdiv a:hover{
+    color: cornflowerblue;
+    font-size: large;
+}
+
+.header{
+    height: 7%;
+    margin-top: 0px;
+    background-color: chocolate;
+}
+
+.title{
+    text-align: center;
+    font-size: xx-large;
+    color: darkslateblue;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}

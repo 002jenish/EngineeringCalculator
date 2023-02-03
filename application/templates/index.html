@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Brick Calculator</title>
+    <style>
+      
+    </style>
+    <link rel="stylesheet" href="index.css">
+    <script src="first.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <nav>
+        <div class="navdiv"><a href="#">Home</a></div>
+        <div class="navdiv"><a href="#">About Us</a></div>
+        <div class="navdiv"><a href="#">Civil Calculator</a></div>
+        <div class="navdiv"><a href="#">Mechenical Calculator</a></div>
+      </nav>
+    </div>
+    <div class="title">
+      <p>Brick Calculator</p>
+    </div>
+    <form method = "post" autocomplete="off">
+      <div class="wall">
+        Wall Details <br>
+        <input type = "text" name = "w1" placeholder="length of wall" required/>
+        <input type = "text" name = "w2" placeholder="thickness of wall" required/>
+        <input type="text" name= "w3" placeholder="height of wall" required/><br><br>
+      </div>
+      <div class="brick">
+        <input type = "text" name = "b1" placeholder="length of brick" required/>
+        <input type = "text" name = "b2" placeholder="thickness of brick" required/>
+        <input type="text" name= "b3" placeholder="height of brick" required/>
+      </div>
+      <div class="buttons">
+        <input type = "submit" value = "Submit" redirect="result.html"/>
+        <input type="reset" id="clean" onclick="clear()">
+      </div>
+    </form>
+  </body>
+</html>
