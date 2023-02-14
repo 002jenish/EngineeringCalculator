@@ -1,0 +1,19 @@
+body{
+    background-color:azure;
+    font-family: Arial,sans-serif;
+    margin: 0;
+    padding: 0;
+    font-weight:bold;
+    margin: 2px;
+}
+
+h2{
+    text-align: center;
+    margin-top: 50px;
+}
+
+#wall_length, #wall_height, #wall_thick
+{
+    width: 20%;
+    
+}

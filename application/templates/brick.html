@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>brick calci</title>
+    <script src="index.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="brick.css">
+</head>
+<body>
+    <h2>Brick Masonry Calcution</h2>
+    <div>
+        <div>
+            <label id="unit" class="unit">Unit</label><br>
+            <select id="input">
+                <option value="1"> Meter/CM</option>
+                <option value="2" selected> feet/inch</option>
+            </select>
+        </div>
+
+        <br>
+
+        <div>
+            <label id="length" >Length (in meter)</label>
+            <input type="text" id="wall_length" required><br>
+
+            <br>
+            <label type="text" id="height" >Height/Depth (in meter)</label>
+            <input type="text" id="wall_height" required><br>
+
+            <br>
+            <label type="text" id="thick" >Thickness (in centi-meter)</label>
+            <input type="text" id="wall_thick">
+
+            <!--
+            <br>
+            <label id="WallThick">Wall Thickness</label><br>
+            <select id="WalThick">
+                <option value="1" selected>select</option>
+                <option value="2" >10 CM Wall </option>
+                <option value="3" >23 CM Wall</option>
+                <option value="4" >34 CM Wall</option>
+                <option value="5" >46 CM Wall</option>
+            </select>
+        -->
+        </div>
+
+        <br>
+
+        <div>
+            <label id="ratio" name="ratio">Ratio</label><br>
+            <select id="input">
+                <option value="1" >C.M 1:3</option>
+                <option value="2" selected>C.M 1:4</option>
+                <option value="3" >C.M 1:5</option>
+                <option value="4" >C.M 1:6</option>
+                <option value="5" >C.M 1:7</option>
+                <option value="6" >C.M 1:8</option>
+                <option value="7" >C.M 1:9</option>
+            </select>
+        </div>
+
+        <br>
+
+        <div>
+            <label class="BrickSize" >Size of Brick (in centi-meter)</label><br>
+            <br>
+            <label id="Blength">Length</label>
+            <input type="text" id="Brick_length" required><br><br>
+
+            <label id="Bwidth">Width</label>
+            <input type="text" id="Brick_width" required><br><br>
+
+            <label id="Bheight">Height</label>
+            <input type="text" id="Brick_height" required><br>
+        </div>
+
+        <br>
+
+        <div>
+            <button type="button" onclick="cal()" class="Cbutton">Calculate</button>
+            <button type="reset" class="Rbutton">Reset</button>
+        </div>
+
+        <br>
+        
+        <div>
+            <label class="answer"> Number of bricks </label>
+            <input type="text" id="Total_Brick" disabled><br><br>
+            <label class="answer"> Cement bags </label>
+            <input type="text" id="Total_Cement" disabled><br><br>
+            <label class="answer"> Sand (kg)</label>
+            <input type="text" id="Total_Sand" disabled>
+        </div>
+    </div>
+</body>
+</html>
