@@ -51,5 +51,35 @@ def calculatorList():
 
     return render_template("calculatorList.html",subs=sub_rows,master_rows=master_rows)
 
+@app.route('/about')
+def about():
+    #database connection
+    conn = pymysql.connect(host='localhost', user='root', password='root', database='calculator')
+    cursor = conn.cursor()
+
+    # Get all subjects from the 'masterTable' table
+    cursor.execute("SELECT EngineeringID,EngineeringName,EngineeringIcon FROM masterTable")
+    master_rows = cursor.fetchall()
+
+    # Close database connection
+    cursor.close()
+    conn.close()
+    return render_template("about.html",master_rows=master_rows)
+
+@app.route('/contact')
+def contact():
+    #database connection
+    conn = pymysql.connect(host='localhost', user='root', password='root', database='calculator')
+    cursor = conn.cursor()
+
+    # Get all subjects from the 'masterTable' table
+    cursor.execute("SELECT EngineeringID,EngineeringName,EngineeringIcon FROM masterTable")
+    master_rows = cursor.fetchall()
+
+    # Close database connection
+    cursor.close()
+    conn.close()
+    return render_template("contact.html",master_rows=master_rows)
+
 if __name__ == '__main__':
     app.run(debug=True)
