@@ -9,21 +9,25 @@ username='root'
 password='root'
 scema='calculator'
 
-
-@app.route('/')
-def index():
-    #database connection
+def data_for_dropdown():
+        #database connection
     conn = pymysql.connect(host='localhost', user='root', password='root', database='calculator')
     cursor = conn.cursor()
 
     # Get all subjects from the 'masterTable' table
     cursor.execute("SELECT EngineeringID,EngineeringName,EngineeringIcon FROM masterTable")
-    master_rows = cursor.fetchall()
+    data = cursor.fetchall()
 
     # Close database connection
     cursor.close()
     conn.close()
 
+    return data
+
+
+@app.route('/')
+def index():
+    master_rows=data_for_dropdown()
     return render_template("index.html",masters=master_rows)
 
 @app.route('/calculatorList')
@@ -35,15 +39,11 @@ def calculatorList():
     conn = pymysql.connect(host='localhost', user='root', password='root', database='calculator')
     cursor = conn.cursor()
 
-    query1="SELECT CalculatorName,CalculatorDiscription FROM subTable WHERE Sequence = %s"
-    query2="SELECT EngineeringID,EngineeringName,EngineeringIcon FROM masterTable"
-
     # Get all students for the selected subject from the 'students' table
-    cursor.execute(query1, E_id,)
+    cursor.execute("SELECT CalculatorName,CalculatorDiscription FROM subTable WHERE Sequence = %s", E_id)
     sub_rows = cursor.fetchall()
 
-    cursor.execute(query2)
-    master_rows=cursor.fetchall()
+    master_rows=data_for_dropdown()
 
     # Close database connection
     cursor.close()
@@ -53,32 +53,12 @@ def calculatorList():
 
 @app.route('/about')
 def about():
-    #database connection
-    conn = pymysql.connect(host='localhost', user='root', password='root', database='calculator')
-    cursor = conn.cursor()
-
-    # Get all subjects from the 'masterTable' table
-    cursor.execute("SELECT EngineeringID,EngineeringName,EngineeringIcon FROM masterTable")
-    master_rows = cursor.fetchall()
-
-    # Close database connection
-    cursor.close()
-    conn.close()
+    master_rows=data_for_dropdown()
     return render_template("about.html",master_rows=master_rows)
 
 @app.route('/contact')
 def contact():
-    #database connection
-    conn = pymysql.connect(host='localhost', user='root', password='root', database='calculator')
-    cursor = conn.cursor()
-
-    # Get all subjects from the 'masterTable' table
-    cursor.execute("SELECT EngineeringID,EngineeringName,EngineeringIcon FROM masterTable")
-    master_rows = cursor.fetchall()
-
-    # Close database connection
-    cursor.close()
-    conn.close()
+    master_rows=data_for_dropdown()
     return render_template("contact.html",master_rows=master_rows)
 
 if __name__ == '__main__':
