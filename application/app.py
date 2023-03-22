@@ -106,6 +106,7 @@ def brick():
             w_length=w_length
             w_width=w_width
 
+        
         # ration select
         bg=request.form['bg']
 

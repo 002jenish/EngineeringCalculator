@@ -1,4 +1,5 @@
 def brick_calculation(w_length,w_width,w_thick,b_length,b_width,b_thick,bg):
+    
     wall_volume=w_length*w_width*(w_thick*0.01)
 
     brick_volume=((b_length*0.01)+0.01) * ((b_width*0.01)+0.01) * ((b_thick*0.01)+0.01)
